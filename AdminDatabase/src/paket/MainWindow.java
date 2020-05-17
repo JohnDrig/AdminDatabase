@@ -178,7 +178,7 @@ public class MainWindow {
 					deletePerson();
 
 				} else {
-					System.out.println("Person konnte nicht hinzugefügt werden");
+					System.out.println("Person konnte nicht hinzugefÃ¼gt werden");
 				}
 
 				// add person to the database
@@ -190,7 +190,7 @@ public class MainWindow {
 
 					Connection con = DriverManager.getConnection(
 							"jdbc:mysql://localhost:3306/admin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin",
-							"root", "IronMan03");
+							"root", "password");
 
 					String query = "insert into person(firstName, secondName, age, gender)values(\"" + vornameString
 							+ "\"" + ", " + "\"" + nachnameString + "\"" + ", " + alterInt + ", " + "\"" + genderString
@@ -198,7 +198,7 @@ public class MainWindow {
 
 					stmt = con.createStatement();
 					rs = stmt.executeUpdate(query);
-					System.out.println("Person wurde erfolgreich in der Datenbank hinzugefügt");
+					System.out.println("Person wurde erfolgreich in der Datenbank hinzugefÃ¼gt");
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				} finally {
@@ -260,7 +260,7 @@ public class MainWindow {
 
 			Connection con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/admin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin",
-					"root", "IronMan03");
+					"root", "password");
 
 			String query = "delete from person where secondName = \"" + indexPerson + "\";";
 
@@ -289,7 +289,7 @@ public class MainWindow {
 
 			Connection con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/admin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin",
-					"root", "IronMan03");
+					"root", "password");
 
 			String query = "select * from person";
 			stmt = con.createStatement();
